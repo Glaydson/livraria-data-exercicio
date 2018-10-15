@@ -61,6 +61,9 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		repoLivros.findAll().stream().forEach(System.out::println);
 		System.out.println();
 		
+		// Livro pelo ID
+		this.repoLivros.findById(40L);
+		
 		// EXERCÍCIO
 		
 		// 2 - Livros dos autores de um determinado país (somente os títulos de cada livro)

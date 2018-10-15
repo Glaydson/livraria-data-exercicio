@@ -1,6 +1,7 @@
 package br.edu.unichristus.livrariadata.controladores;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.unichristus.livrariadata.entidades.Livro;
+import br.edu.unichristus.livrariadata.excecoes.LivroNaoEncontradoException;
 import br.edu.unichristus.livrariadata.repositorios.LivroRepository;
 
 @CrossOrigin(origins = "http://localhost:8080")
@@ -33,7 +35,9 @@ public class LivroController {
 
 	@GetMapping("/{id}")
 	public Livro buscarPeloID(@PathVariable Long id) {
-		return repoLivro.findById(id).get();
+		Optional<Livro> livroOptional = repoLivro.findById(id);
+		livroOptional.orElseThrow(() -> new LivroNaoEncontradoException(id));
+		return livroOptional.get();
 	}
 
 	@PostMapping("/novo")
