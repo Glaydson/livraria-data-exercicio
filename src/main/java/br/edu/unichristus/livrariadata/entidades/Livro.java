@@ -37,7 +37,14 @@ public class Livro {
 		this.preco = preco;
 		this.autor = autor;
 	}
-
+	
+	public Livro(String titulo, int numeroPaginas, BigDecimal preco) {
+		super();
+		this.titulo = titulo;
+		this.numeroPaginas = numeroPaginas;
+		this.preco = preco;
+	}
+	
 	public Livro() {
 
 	}
