@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
@@ -19,8 +21,10 @@ public class Livro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long livroID;
 
+	@NotBlank
 	private String titulo;
 
+	@Min(value = 50)
 	private int numeroPaginas;
 
 	private BigDecimal preco;
