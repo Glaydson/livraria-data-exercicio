@@ -43,7 +43,7 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		repoAutores.save(gracilianoramos);
 		repoAutores.save(conandoyle);
 		
-		repoLivros.save(new Livro("It a Coisa", 200, new BigDecimal(72.90), stephenking));
+		repoLivros.save(new Livro("", 20, new BigDecimal(72.90), stephenking));
 		repoLivros.save(new Livro("A Torre Negra - O Pistoleiro", 123, new BigDecimal(37.90), stephenking));
 		repoLivros.save(new Livro("Objetos Cortantes", 490, new BigDecimal(26.31), gillianflynn));
 		repoLivros.save(new Livro("Capitães da Areia", 500, new BigDecimal(35.90), jorgeamado));
