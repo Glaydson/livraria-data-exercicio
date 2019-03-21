@@ -55,7 +55,7 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		repoLivros.save(new Livro("As Aventuras de Sherlock Holmes", 420, new BigDecimal(124.00), conandoyle));
 		repoLivros.save(new Livro("O Cão dos Baskervilles", 210, new BigDecimal(92.00), conandoyle));
 		
-		// obtêm todos os livros
+		// Obtem todos os livros
 		System.out.println("obtendo os livros...");
 		System.out.println("-------------------------");
 		repoLivros.findAll().stream().forEach(System.out::println);
@@ -64,23 +64,23 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		// Livro pelo ID
 		this.repoLivros.findById(40L);
 		
-		// EXERCÍCIO
+		// EXERCICIO
 		
 		// 2 - Livros dos autores de um determinado país (somente os títulos de cada livro)
 		System.out.println("LIVROS DE AUTORES BRASILEIROS:");
 		
 		
-		// 3 - Preço médio dos livros cadastrados
+		// 3 - Preco medio dos livros cadastrados
 		System.out.println();
-		System.out.print("PREÇO MÉDIO DOS LIVROS: ");
+		System.out.print("PRECO MEDIO DOS LIVROS: ");
 		
 		
-		// 4 - Listar os NOMES dos autores de um determinado país
+		// 4 - Listar os NOMES dos autores de um determinado pais
 		System.out.println();
 		System.out.println("AUTORES DOS ESTADOS UNIDOS:");
 		
 		
-		// 6 - Listar autores com seus livros - Listagem contendo nome de cada autor autor e o título dos seus livros
+		// 6 - Listar autores com seus livros - Listagem contendo nome de cada autor autor e o titulo dos seus livros
 		System.out.println();
 		System.out.println("LISTA DE AUTORES COM SEUS RESPECTIVOS LIVROS:");
 
