@@ -66,7 +66,7 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		
 		// EXERCICIO
 		
-		// 2 - Livros dos autores de um determinado país (somente os títulos de cada livro)
+		// 2 - Livros dos autores de um determinado pais (somente os titulos de cada livro)
 		System.out.println("LIVROS DE AUTORES BRASILEIROS:");
 		
 		
