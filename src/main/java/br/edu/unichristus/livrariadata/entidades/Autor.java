@@ -28,7 +28,7 @@ public class Autor {
 	
 	private String paisOrigem;
 	
-	// Autor é incluído pelo seu livro
+	// Autor eh incluido pelo seu livro
 	@JsonIgnoreProperties("autor")
 	@OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Livro> livros;

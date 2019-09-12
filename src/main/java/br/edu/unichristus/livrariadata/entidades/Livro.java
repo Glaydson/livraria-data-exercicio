@@ -29,8 +29,8 @@ public class Livro {
 
 	private BigDecimal preco;
 	
-	// Por simplificação, definimos que cada livro só tem um autor 
-	// Livro é o lado dominante, deve incluir seu autor
+	// Por simplificacao, definimos que cada livro tem um autor
+	// Livro eh o lado dominante, deve incluir seu autor
 	@ManyToOne
 	private Autor autor;
 
