@@ -27,7 +27,7 @@ public class LivrariaDataApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		// limpa os reposit�rios
+		// limpa os repositorios
 		repoLivros.deleteAll();
 		repoAutores.deleteAll();
 		// salva alguns livros e autores
@@ -43,7 +43,6 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		repoAutores.save(gracilianoramos);
 		repoAutores.save(conandoyle);
 		
-		repoLivros.save(new Livro("", 20, new BigDecimal(72.90), stephenking));
 		repoLivros.save(new Livro("A Torre Negra - O Pistoleiro", 123, new BigDecimal(37.90), stephenking));
 		repoLivros.save(new Livro("Objetos Cortantes", 490, new BigDecimal(26.31), gillianflynn));
 		repoLivros.save(new Livro("Capitaes da Areia", 500, new BigDecimal(35.90), jorgeamado));
@@ -61,28 +60,25 @@ public class LivrariaDataApplication implements CommandLineRunner {
 		repoLivros.findAll().stream().forEach(System.out::println);
 		System.out.println();
 		
-		// Livro pelo ID
-		this.repoLivros.findById(40L);
-		
-		// EXERCICIO
+		// EXERCICIOS
 		
 		// 2 - Livros dos autores de um determinado pais (somente os titulos de cada livro)
-		System.out.println("LIVROS DE AUTORES BRASILEIROS:");
+		System.out.println("EXERCÍCIO 2 - LIVROS DE AUTORES BRASILEIROS:");
 		
 		
 		// 3 - Preco medio dos livros cadastrados
 		System.out.println();
-		System.out.print("PRECO MEDIO DOS LIVROS: ");
+		System.out.print("EXERCÍCIO 3 - PRECO MEDIO DOS LIVROS: ");
 		
 		
-		// 4 - Listar os NOMES dos autores de um determinado pais
+		// 4 - Listar os NOMES dos autores de um determinado pais (após criar o método em AutorController)
 		System.out.println();
-		System.out.println("AUTORES DOS ESTADOS UNIDOS:");
+		System.out.println("EXERCÍCIO 4 - AUTORES DOS ESTADOS UNIDOS:");
 		
 		
 		// 6 - Listar autores com seus livros - Listagem contendo nome de cada autor autor e o titulo dos seus livros
 		System.out.println();
-		System.out.println("LISTA DE AUTORES COM SEUS RESPECTIVOS LIVROS:");
+		System.out.println("EXERCÍCIO 6 - LISTA DE AUTORES COM SEUS RESPECTIVOS LIVROS:");
 
 		
 		

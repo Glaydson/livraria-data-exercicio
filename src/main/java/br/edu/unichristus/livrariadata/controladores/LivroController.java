@@ -19,7 +19,6 @@ import br.edu.unichristus.livrariadata.entidades.Livro;
 import br.edu.unichristus.livrariadata.excecoes.LivroNaoEncontradoException;
 import br.edu.unichristus.livrariadata.repositorios.LivroRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/livro")
 public class LivroController {
@@ -49,10 +48,8 @@ public class LivroController {
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> deleteLivro(@PathVariable("id") long id) {
 		System.out.println("Delete Livro com ID = " + id + "...");
- 
-		repoLivro.deleteById(id);
- 
-		return new ResponseEntity<>("Livro foi removido!", HttpStatus.OK);
+ 		repoLivro.deleteById(id);
+ 		return new ResponseEntity<>("Livro foi removido!", HttpStatus.OK);
 	}
 	
 	@GetMapping("/titulo/{titulo}")
