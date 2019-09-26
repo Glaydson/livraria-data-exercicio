@@ -2,6 +2,8 @@ package br.edu.unichristus.livrariadata.controladores;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,6 +60,24 @@ public class LivroController {
 		List<Livro> livros = repoLivro.findByTituloContains(titulo);
 		return livros;
 	}
-
+	
+	@GetMapping("/titulosAutoresPais")
+	public List<String> buscarPeloPais(@PathVariable String pais) {
+		List<Livro> todosLivros = repoLivro.findAll();
+		Stream<String> streamLivros = todosLivros.stream()
+			.filter(livro -> livro.getAutor().getPaisOrigem().equals(pais))
+			.map(Livro :: getTitulo);
+		return streamLivros.collect(Collectors.toList());
+	}
+	
+	@GetMapping("/precoMedio")
+	public double obterPrecoMedioLivros() {
+		List<Livro> todosLivros = repoLivro.findAll();
+		return todosLivros.stream()
+				.mapToDouble(livro -> livro.getPreco().doubleValue())
+				.average()
+				.getAsDouble();
+	}
+	
 }
 
